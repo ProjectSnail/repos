@@ -7,12 +7,12 @@ repos                               list all existing repos
 repos list [username]               list all repos of given user, default auth
 repos create    :name               create a new repo, default public
 repos edit      :name               edits repo values
-repos remove    :name               removes a repo
+repos delete    :name               removes a repo
 """
 
 """  Options:
- --Org, -o                       :   given username is for organization
-
+ --Org, -o :orgname                 given name is for organization
+ --Private, -p
 """
 
 import requests, json, colored, time
