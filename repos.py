@@ -11,13 +11,12 @@ repos delete    :name               removes a repo
 """
 
 """  Options:
- --Org, -o :orgname                 given name is for organization
- --Private, -p
+--org, -o :orgname                 given name is for organization
+--private, -p
 """
 
 import requests, json, colored, time
 from lib import github
+from lib import parser
 
-auth=("user","pass")
-
-github.list(orgname="projectsnail", auth=auth)
+print parser.parse()
