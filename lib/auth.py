@@ -3,6 +3,14 @@ import os, pickle, getpass
 USER_LOCAL_PATH = os.path.join(os.environ["HOME"], ".repos")
 USER_AUTH_PATH = os.path.join(USER_LOCAL_PATH, 'auth')
 
+def writeStr(str, f, encode='ascii'):
+    pickle.dump(len(str), f)
+    f.write(str.encode(encode))
+
+def readStr(f, encode='ascii'):
+    l = pickle.load(f)
+    return f.read(l)
+
 def checkFolder():
     if not os.path.exists(USER_LOCAL_PATH):
         os.makedirs(USER_LOCAL_PATH)
